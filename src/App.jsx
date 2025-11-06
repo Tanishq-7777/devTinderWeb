@@ -1,10 +1,19 @@
-import Navbar from "./components/Navbar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Body from "./components/Body";
+import Login from "./components/Login";
+import Profile from "./components/Profile";
 
 export default function App() {
   return (
     <div data-theme="cupcake" className="h-screen w-full ">
-      <Navbar />
-      <h1 className="text-amber-400">Hey Dev</h1>
+      <BrowserRouter basename="/">
+        <Routes>
+          <Route path="/" element={<Body />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

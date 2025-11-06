@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <div className="navbar bg-primary shadow-sm ">
+    <div className="navbar bg-base-300 shadow-sm  ">
       <div className="flex-1 ml-4">
         <a className="btn btn-ghost text-xl">😘DevTinder</a>
       </div>
