@@ -8,7 +8,6 @@ export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
-  console.log(user);
   const handleLogout = async () => {
     try {
       await axios.post(
@@ -28,7 +27,7 @@ export default function Navbar() {
     <div className="navbar bg-base-300 shadow-sm  ">
       <div className="flex-1 ml-4">
         <Link to="/" className="btn btn-ghost text-xl">
-          😘DevTinder
+          😘DevSpace
         </Link>
       </div>
       <div className="flex gap-2 mr-5 items-center">

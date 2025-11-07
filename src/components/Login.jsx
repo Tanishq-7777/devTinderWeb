@@ -2,12 +2,12 @@ import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
 
 const Login = () => {
-  const [emailId, setEmailId] = useState("tani@gmail.com");
-  const [password, setPassword] = useState("Tan@1234");
+  const [emailId, setEmailId] = useState("");
+  const [password, setPassword] = useState("");
   const [err, setError] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -51,10 +51,13 @@ const Login = () => {
           className="input"
           placeholder="Password"
         />
-        <p className="text-red-600">Error :{err}</p>
+        <p className="text-red-600">{err}</p>
         <button className="btn btn-neutral mt-4" onClick={handleLogin}>
           Login
         </button>
+        <Link to="/signup">
+          <p>New User ? SignUp here.</p>
+        </Link>
       </fieldset>
     </div>
   );
