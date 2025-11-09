@@ -1,8 +1,8 @@
 const UserCard = ({ user }) => {
   const { firstName, lastName, photoUrl, about, skills, gender, age } = user;
   return (
-    <div className="h-full flex   justify-center my-5">
-      <div className="card w-50  bg-base-300 md:w-96  shadow-sm">
+    <div className="h-full flex md:mt-20 mt-25  justify-center ">
+      <div className="card w-70  bg-base-300 md:w-96  shadow-sm">
         <figure className="max-h-[80%]">
           <img className="w-full object-cover" src={photoUrl} alt="Shoes" />
         </figure>

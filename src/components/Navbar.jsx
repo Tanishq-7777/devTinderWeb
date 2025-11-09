@@ -24,10 +24,15 @@ export default function Navbar() {
     }
   };
   return (
-    <div className="navbar bg-base-300 shadow-sm  ">
+    <div className="navbar bg-base-300 shadow-sm text-primary ">
       <div className="flex-1 ml-4">
         <Link to="/" className="btn btn-ghost text-xl">
-          😘DevSpace
+          <img
+            src="https://www.vectorkhazana.com/assets/images/products/Lips_SVG_Kiss_Svg_8.png"
+            className="h-10"
+            alt=""
+          />
+          DevSpace
         </Link>
       </div>
       <div className="flex gap-2 mr-5 items-center">
@@ -55,7 +60,10 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <a>Settings</a>
+              <Link to="/connections">Connections</Link>
+            </li>
+            <li>
+              <Link to="/requests">Requests</Link>
             </li>
             <li onClick={handleLogout}>
               <Link to="/">Logout</Link>

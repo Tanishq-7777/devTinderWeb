@@ -6,10 +6,12 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Feed from "./components/Feed";
 import SignUp from "./components/SignUp";
+import Connections from "./components/Connections";
+import Request from "./components/Request";
 
 export default function App() {
   return (
-    <div data-theme="cupcake" className="min-h-screen w-full ">
+    <div data-theme="halloween" className="min-h-screen w-full ">
       <Provider store={appStore}>
         <BrowserRouter basename="/">
           <Routes>
@@ -18,6 +20,8 @@ export default function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/connections" element={<Connections />} />
+              <Route path="/requests" element={<Request />} />
             </Route>
           </Routes>
         </BrowserRouter>
