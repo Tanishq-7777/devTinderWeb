@@ -12,7 +12,7 @@ const Feed = () => {
   const getFeed = async () => {
     if (feed) return;
     try {
-      const res = await axios.get(BASE_URL + "/user/feed?limit=1", {
+      const res = await axios.get(BASE_URL + "/user/feed", {
         withCredentials: true,
       });
       dispatch(addFeed(res.data));
@@ -22,7 +22,7 @@ const Feed = () => {
   };
   useEffect(() => {
     getFeed();
-  }, []);
+  }, [feed]);
   return (
     feed && (
       <div className="flex flex-wrap justify-center items-center gap-10 pb-16">
