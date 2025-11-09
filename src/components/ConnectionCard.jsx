@@ -1,4 +1,4 @@
-const ConnectionCard = ({ connection, sendButton }) => {
+const ConnectionCard = ({ connection, sendButton, handleClick, _id }) => {
   const { firstName, lastName, photoUrl, about } = connection;
 
   return (
@@ -23,13 +23,23 @@ const ConnectionCard = ({ connection, sendButton }) => {
       )}
       {!sendButton && (
         <div className="flex gap-2">
-          <button className="btn bg-accent btn-ghost">Accept</button>
+          <button
+            onClick={() => handleClick("accepted", _id)}
+            className="btn bg-accent btn-ghost"
+          >
+            Accept
+          </button>
         </div>
       )}
 
       {!sendButton && (
         <div className="flex gap-2">
-          <button className="btn bg-error btn-ghost">Reject</button>
+          <button
+            onClick={() => handleClick("rejected", _id)}
+            className="btn bg-error btn-ghost"
+          >
+            Reject
+          </button>
         </div>
       )}
     </div>

@@ -8,11 +8,13 @@ import ConnectionCard from "./ConnectionCard";
 const Connections = () => {
   const dispatch = useDispatch();
   const connections = useSelector((store) => store.connections);
+
   const fetchConnections = async () => {
     try {
       const res = await axios.get(BASE_URL + "/user/connections", {
         withCredentials: true,
       });
+      console.log(res);
       dispatch(addConnections(res.data.data));
     } catch (err) {
       console.log(err);
@@ -31,13 +33,7 @@ const Connections = () => {
       <div className="my-6 flex flex-col items-center">
         {connections?.map((connection) => {
           console.log(connection);
-          return (
-            <ConnectionCard
-              key={connection._id}
-              connection={connection}
-              sendButton={true}
-            />
-          );
+          return <ConnectionCard connection={connection} sendButton={true} />;
         })}
       </div>
     </div>
