@@ -1,6 +1,8 @@
-const ConnectionCard = ({ connection, sendButton, handleClick, _id }) => {
-  const { firstName, lastName, photoUrl, about } = connection;
+import { Link } from "react-router-dom";
 
+const ConnectionCard = ({ connection, sendButton, handleClick }) => {
+  const { _id, firstName, lastName, photoUrl, about } = connection;
+  console.log(connection);
   return (
     <div className="flex items-center gap-3 bg-base-200 w-[50%] md:w-[60%] mx-auto my-4 p-3 rounded-xl shadow-md">
       <img
@@ -17,9 +19,9 @@ const ConnectionCard = ({ connection, sendButton, handleClick, _id }) => {
       </div>
 
       {sendButton && (
-        <div className="flex gap-2">
+        <Link to={`/chat/${_id}`} className="flex gap-2">
           <button className="btn bg-secondary btn-ghost">Message</button>
-        </div>
+        </Link>
       )}
       {!sendButton && (
         <div className="flex gap-2">
